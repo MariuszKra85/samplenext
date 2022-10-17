@@ -1,5 +1,5 @@
 import { ApolloProvider } from '@apollo/client';
-import apollo from '../lib/apollo';
+import withApollo from '../lib/withApollo';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps, apollo }) {
@@ -19,4 +19,4 @@ MyApp.getInitialProps = async function ({ Component, ctx }) {
   return { pageProps };
 };
 
-export default apollo(MyApp);
+export default withApollo(MyApp);

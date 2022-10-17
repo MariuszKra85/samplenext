@@ -5,9 +5,8 @@ import styles from '../styles/Home.module.css';
 
 const QUERY = gql`
   query Users {
-    allUsers {
+    allProducts {
       id
-      name
     }
   }
 `;
@@ -15,7 +14,7 @@ const QUERY = gql`
 export default function Home() {
   const { data, loading, error } = useQuery(QUERY);
 
-  if (loading || !data) {
+  if (loading) {
     return (
       <div className={styles.container}>
         <p>loading...</p>
