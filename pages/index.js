@@ -14,6 +14,15 @@ const QUERY = gql`
 
 export default function Home() {
   const { data, loading, error } = useQuery(QUERY);
+
+  if (loading || !data) {
+    return (
+      <div className={styles.container}>
+        <p>loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <Head>
